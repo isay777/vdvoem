@@ -4,17 +4,38 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "channel": "development"
+      "channel": "development",
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://mehdorzhkjgymqsrnjeo.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_pcGG9Dv1DQe7qnpKMap1qw_ynvyPuM3",
+        "EXPO_PUBLIC_INVITE_BASE_URL": "https://bar.smuzi-studio.ru",
+        "EXPO_PUBLIC_EAS_PROJECT_ID": "bf59090f-3d37-406b-808f-9a4ee976e051",
+        "EXPO_PUBLIC_DEMO_MODE": "false"
+      }
     },
     "preview": {
       "distribution": "internal",
       "android": { "buildType": "apk" },
-      "channel": "preview"
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://mehdorzhkjgymqsrnjeo.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_pcGG9Dv1DQe7qnpKMap1qw_ynvyPuM3",
+        "EXPO_PUBLIC_INVITE_BASE_URL": "https://bar.smuzi-studio.ru",
+        "EXPO_PUBLIC_EAS_PROJECT_ID": "bf59090f-3d37-406b-808f-9a4ee976e051",
+        "EXPO_PUBLIC_DEMO_MODE": "false"
+      }
     },
     "production": {
       "autoIncrement": true,
       "android": { "buildType": "app-bundle" },
-      "channel": "production"
+      "channel": "production",
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://mehdorzhkjgymqsrnjeo.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_pcGG9Dv1DQe7qnpKMap1qw_ynvyPuM3",
+        "EXPO_PUBLIC_INVITE_BASE_URL": "https://bar.smuzi-studio.ru",
+        "EXPO_PUBLIC_EAS_PROJECT_ID": "bf59090f-3d37-406b-808f-9a4ee976e051",
+        "EXPO_PUBLIC_DEMO_MODE": "false"
+      }
     }
   },
   "submit": {

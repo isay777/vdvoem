@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Мы вдвоём",
-    "slug": "my-vdvoem",
+    "slug": "isay777",
     "description": "Приватное пространство пары для желаний, планов, свиданий и повседневных дел.",
     "version": "0.1.0",
     "orientation": "portrait",
@@ -10,7 +10,9 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.myvdvoem.mobile",
-      "associatedDomains": ["applinks:bar.smuzi-studio.ru"],
+      "associatedDomains": [
+        "applinks:bar.smuzi-studio.ru"
+      ],
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "Чтобы добавить фотографию к желанию или идее свидания.",
         "NSCameraUsageDescription": "Чтобы сделать фотографию для вашей общей записи."
@@ -25,8 +27,17 @@
         {
           "action": "VIEW",
           "autoVerify": true,
-          "data": [{ "scheme": "https", "host": "bar.smuzi-studio.ru", "pathPrefix": "/invite" }],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "data": [
+            {
+              "scheme": "https",
+              "host": "bar.smuzi-studio.ru",
+              "pathPrefix": "/invite"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ]
     },
@@ -34,13 +45,31 @@
       "expo-router",
       "expo-secure-store",
       "expo-sqlite",
-      ["expo-image-picker", { "photosPermission": "Разрешите выбрать фото для вашей общей записи.", "cameraPermission": "Разрешите сделать фото для вашей общей записи.", "microphonePermission": false }],
-      ["expo-notifications", { "color": "#E7688D", "defaultChannel": "updates" }]
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Разрешите выбрать фото для вашей общей записи.",
+          "cameraPermission": "Разрешите сделать фото для вашей общей записи.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#E7688D",
+          "defaultChannel": "updates"
+        }
+      ]
     ],
-    "experiments": { "typedRoutes": true },
+    "experiments": {
+      "typedRoutes": true
+    },
     "extra": {
       "router": {},
-      "eas": { "projectId": "bf59090f-3d37-406b-808f-9a4ee976e051" }
-    }
+      "eas": {
+        "projectId": "bf59090f-3d37-406b-808f-9a4ee976e051"
+      }
+    },
+    "owner": "isay777s-team"
   }
 }
