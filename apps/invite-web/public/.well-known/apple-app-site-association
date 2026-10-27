@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["APPLE_TEAM_ID.app.myvdvoem.mobile"],
+        "components": [{ "/": "/invite/*", "comment": "Partner invitations" }]
+      }
+    ]
+  }
+}

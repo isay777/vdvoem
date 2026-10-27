@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root { font-family: Manrope, system-ui, sans-serif; color: #352c36; background: #fff8f6; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; }
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background-image: radial-gradient(#e7688d16 1px, transparent 1px); background-size: 24px 24px; }
+.ambient { position: fixed; width: 42vw; height: 42vw; border-radius: 50%; filter: blur(65px); opacity: .34; pointer-events: none; }
+.ambient-one { top: -18vw; left: -12vw; background: #f3a5ba; }
+.ambient-two { right: -18vw; bottom: -18vw; background: #bca7eb; }
+.invite-shell { position: relative; width: min(100% - 32px, 580px); margin: 0 auto; padding: 30px 0 24px; }
+.brand { display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 800; color: #624e65; margin-bottom: 28px; }
+.brand-mark { position: relative; display: inline-grid; place-items: center; width: 38px; height: 32px; color: #e7688d; }
+.brand-mark svg { width: 27px; fill: #e7688d30; }
+.brand-mark i { position: absolute; left: 13px; top: 6px; color: #8a6bc8; }
+.brand-mark i svg { width: 23px; fill: #8a6bc830; }
+svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.card { position: relative; overflow: hidden; background: #ffffffdf; border: 1px solid #fff; box-shadow: 0 24px 70px #6c3b581c; border-radius: 32px; padding: clamp(28px, 7vw, 52px); text-align: center; backdrop-filter: blur(16px); }
+.heart-confetti { position: absolute; inset: 18px 24px auto; display: flex; justify-content: space-between; color: #dca5b6; font-size: 20px; }
+.heart-confetti b { color: #bba2e0; transform: translateY(14px); }
+.large-heart { display: grid; place-items: center; width: 76px; height: 76px; margin: 4px auto 24px; border-radius: 28px; color: #e7688d; background: linear-gradient(145deg, #ffe6ec, #f4eafd); transform: rotate(-4deg); }
+.large-heart svg { width: 38px; height: 38px; fill: #e7688d25; stroke-width: 1.6; }
+.large-heart.muted { color: #a99eaa; background: #f4eff2; }
+.eyebrow { margin: 0 0 8px; text-transform: uppercase; letter-spacing: .13em; color: #8a6bc8; font-size: 12px; font-weight: 800; }
+h1 { margin: 0 auto 16px; max-width: 460px; font-size: clamp(28px, 6vw, 44px); line-height: 1.08; letter-spacing: -.04em; }
+.lead, .center > p:last-child { margin: 0 auto 28px; max-width: 440px; color: #786d79; font-size: 16px; line-height: 1.7; }
+.primary { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; padding: 14px 22px; color: white; background: linear-gradient(135deg, #e7688d, #cf5f96); text-decoration: none; border-radius: 18px; font-weight: 800; box-shadow: 0 12px 26px #e7688d3b; }
+.divider { display: flex; align-items: center; gap: 12px; margin: 25px 0 16px; color: #a092a0; font-size: 12px; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #eedde1; }
+.code { width: 100%; border: 1px solid #eedde1; background: #fff9fa; border-radius: 18px; padding: 15px; cursor: pointer; color: inherit; font: inherit; }
+.code span { display: block; letter-spacing: .32em; margin-left: .32em; font-size: 23px; font-weight: 800; }
+.code small { display: block; margin-top: 5px; color: #8d818e; }
+.stores { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+.stores a { padding: 13px; border-radius: 14px; background: #352c36; color: #fff; text-decoration: none; font-weight: 700; }
+.expiry { margin: 17px 0 0; color: #8d818e; font-size: 12px; }
+footer { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px; color: #817482; text-align: center; font-size: 12px; }
+footer svg { width: 17px; min-width: 17px; color: #4f9975; }
+.skeleton { border-radius: 16px; background: linear-gradient(90deg, #f5e9ed 25%, #fff6f8 50%, #f5e9ed 75%); background-size: 200% 100%; animation: shimmer 1.3s infinite; }
+.skeleton.hero { width: 76px; height: 76px; margin: 10px auto 32px; }
+.skeleton.line { height: 24px; margin: 12px auto; }
+.skeleton.short { width: 68%; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+@media (max-width: 420px) { .invite-shell { width: min(100% - 20px, 580px); padding-top: 20px; } .card { border-radius: 26px; padding: 30px 22px; } .stores { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; } }
+@media (prefers-color-scheme: dark) {
+  :root { color: #fff7f8; background: #17131b; }
+  .card { background: #221c27e8; border-color: #3e3342; box-shadow: 0 24px 70px #0007; }
+  .brand { color: #f6eaf6; }
+  .lead, .center > p:last-child, footer, .expiry { color: #c9bccb; }
+  .code { color: #fff7f8; background: #302431; border-color: #49394b; }
+  .divider::before, .divider::after { background: #49394b; }
+  .large-heart { background: linear-gradient(145deg, #4b2c3a, #3c3150); }
+}

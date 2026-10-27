@@ -1,0 +1,17 @@
+{
+  "name": "my-vdvoem",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.20.0",
+  "scripts": {
+    "dev": "pnpm --filter @my-vdvoem/mobile start",
+    "dev:web": "pnpm --filter @my-vdvoem/invite-web dev",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "build:web": "pnpm --filter @my-vdvoem/invite-web build"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5"
+  }
+}
