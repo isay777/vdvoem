@@ -73,7 +73,14 @@ export const useAppStore = create<AppState>((set, get) => ({
     } catch (error) { set({ booting: false, error: error instanceof Error ? error.message : 'Ошибка запуска' }); }
   },
   enterDemo: () => set({ authenticated: true, demo: true, booting: false, identity: { userId: 'demo-user', displayName: 'Аня', coupleId: 'demo-couple' }, records: demoRows.map(toView) }),
-  sendOtp: async (email) => { const client = await requireSupabase(); const result = await client.auth.signInWithOtp({ email, options: { shouldCreateUser: true } }); if (result.error) throw result.error; },
+  sendOtp: async (email) => {
+    const client = await requireSupabase();
+    const result = await client.auth.signInWithOtp({
+      email,
+      options: { shouldCreateUser: true, emailRedirectTo: 'myvdvoem://auth/callback' },
+    });
+    if (result.error) throw result.error;
+  },
   verifyOtp: async (email, token) => {
     const client = await requireSupabase(); const result = await client.auth.verifyOtp({ email, token, type: 'email' }); if (result.error) throw result.error;
     const identity = await currentIdentity(); if (!identity) throw new Error('Не удалось создать профиль');

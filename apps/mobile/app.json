@@ -3,7 +3,7 @@
     "name": "Мы вдвоём",
     "slug": "isay777",
     "description": "Приватное пространство пары для желаний, планов, свиданий и повседневных дел.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "orientation": "portrait",
     "scheme": "myvdvoem",
     "userInterfaceStyle": "automatic",

@@ -44,6 +44,7 @@ function Navigation() {
       <Stack.Screen name="index" />
       <Stack.Screen name="sign-in" />
       <Stack.Screen name="verify" />
+      <Stack.Screen name="auth/callback" />
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="list/[kind]" options={{ presentation: 'card' }} />
       <Stack.Screen name="editor/[kind]" options={{ presentation: 'modal' }} />
