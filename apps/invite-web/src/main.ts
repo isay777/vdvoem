@@ -1,10 +1,16 @@
 import './styles.css';
+import brandIconUrl from '../../../assets/vdvoem-app-icon.png';
 
 type InvitePreview = { valid: boolean; code?: string; expiresAt?: string; reason?: string };
 
 const env = import.meta.env;
 const token = location.pathname.split('/invite/')[1]?.split('/')[0] || new URLSearchParams(location.search).get('token') || '';
 const app = document.querySelector<HTMLElement>('#app')!;
+const favicon = document.createElement('link');
+favicon.rel = 'icon';
+favicon.type = 'image/png';
+favicon.href = brandIconUrl;
+document.head.append(favicon);
 
 function icon(name: 'heart' | 'shield' | 'phone') {
   const paths = {
@@ -19,7 +25,7 @@ function shell(content: string) {
   app.innerHTML = `
     <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
     <section class="invite-shell">
-      <header class="brand"><span class="brand-mark">${icon('heart')}<i>${icon('heart')}</i></span><span>Мы вдвоём</span></header>
+      <header class="brand"><img class="brand-icon" src="${brandIconUrl}" alt="" /><span>Мы вдвоём</span></header>
       ${content}
       <footer>${icon('shield')} Приглашение не открывает доступ к личным данным пары</footer>
     </section>`;
@@ -36,7 +42,7 @@ function renderError(reason = 'Ссылка недействительна ил�
 function renderInstall() {
   const androidUrl = env.VITE_ANDROID_APK_URL || env.VITE_PLAY_STORE_URL || '#';
   shell(`<div class="card center">
-    <span class="large-heart">${icon('heart')}</span>
+    <img class="invite-icon" src="${brandIconUrl}" alt="Иконка приложения «Мы вдвоём»" />
     <p class="eyebrow">Тестовая версия</p>
     <h1>Ваше место только для двоих</h1>
     <p class="lead">Установите MVP на Android и откройте демонстрационный режим, чтобы познакомиться с приложением.</p>
@@ -52,7 +58,7 @@ function renderInvite(preview: InvitePreview) {
   const androidLabel = env.VITE_ANDROID_APK_URL ? 'Скачать Android APK' : 'Google Play';
   shell(`<div class="card">
     <div class="heart-confetti" aria-hidden="true">♡ <b>♥</b> ♡</div>
-    <span class="large-heart">${icon('heart')}</span>
+    <img class="invite-icon" src="${brandIconUrl}" alt="Иконка приложения «Мы вдвоём»" />
     <p class="eyebrow">Личное приглашение</p>
     <h1>Вас ждут в пространстве «Мы вдвоём»</h1>
     <p class="lead">Планы, желания и маленькие радости — в одном приватном месте только для вас двоих.</p>

@@ -9,10 +9,7 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; bac
 .ambient-two { right: -18vw; bottom: -18vw; background: #bca7eb; }
 .invite-shell { position: relative; width: min(100% - 32px, 580px); margin: 0 auto; padding: 30px 0 24px; }
 .brand { display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 800; color: #624e65; margin-bottom: 28px; }
-.brand-mark { position: relative; display: inline-grid; place-items: center; width: 38px; height: 32px; color: #e7688d; }
-.brand-mark svg { width: 27px; fill: #e7688d30; }
-.brand-mark i { position: absolute; left: 13px; top: 6px; color: #8a6bc8; }
-.brand-mark i svg { width: 23px; fill: #8a6bc830; }
+.brand-icon { width: 42px; height: 42px; border-radius: 13px; object-fit: cover; box-shadow: 0 8px 20px #a90a4a2c; }
 svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .card { position: relative; overflow: hidden; background: #ffffffdf; border: 1px solid #fff; box-shadow: 0 24px 70px #6c3b581c; border-radius: 32px; padding: clamp(28px, 7vw, 52px); text-align: center; backdrop-filter: blur(16px); }
 .heart-confetti { position: absolute; inset: 18px 24px auto; display: flex; justify-content: space-between; color: #dca5b6; font-size: 20px; }
@@ -20,6 +17,7 @@ svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.8; fill: 
 .large-heart { display: grid; place-items: center; width: 76px; height: 76px; margin: 4px auto 24px; border-radius: 28px; color: #e7688d; background: linear-gradient(145deg, #ffe6ec, #f4eafd); transform: rotate(-4deg); }
 .large-heart svg { width: 38px; height: 38px; fill: #e7688d25; stroke-width: 1.6; }
 .large-heart.muted { color: #a99eaa; background: #f4eff2; }
+.invite-icon { display: block; width: 104px; height: 104px; margin: 0 auto 24px; border-radius: 29px; object-fit: cover; box-shadow: 0 18px 40px #a90a4a35; }
 .eyebrow { margin: 0 0 8px; text-transform: uppercase; letter-spacing: .13em; color: #8a6bc8; font-size: 12px; font-weight: 800; }
 h1 { margin: 0 auto 16px; max-width: 460px; font-size: clamp(28px, 6vw, 44px); line-height: 1.08; letter-spacing: -.04em; }
 .lead, .center > p:last-child { margin: 0 auto 28px; max-width: 440px; color: #786d79; font-size: 16px; line-height: 1.7; }

@@ -4,6 +4,7 @@
     "slug": "isay777",
     "description": "Приватное пространство пары для желаний, планов, свиданий и повседневных дел.",
     "version": "0.1.1",
+    "icon": "../../assets/vdvoem-app-icon.png",
     "orientation": "portrait",
     "scheme": "myvdvoem",
     "userInterfaceStyle": "automatic",
@@ -21,6 +22,7 @@
     "android": {
       "package": "app.myvdvoem.mobile",
       "adaptiveIcon": {
+        "foregroundImage": "../../assets/vdvoem-app-icon.png",
         "backgroundColor": "#FFF0F3"
       },
       "intentFilters": [
