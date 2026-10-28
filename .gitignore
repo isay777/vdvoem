@@ -4,6 +4,7 @@ node_modules/
 .env.local
 dist/
 coverage/
+artifacts/
 *.log
 google-play-service-account.json
 *.keystore

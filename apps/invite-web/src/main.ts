@@ -33,10 +33,23 @@ function renderError(reason = 'Ссылка недействительна ил�
   shell(`<div class="card center"><span class="large-heart muted">${icon('heart')}</span><p class="eyebrow">Приглашение недоступно</p><h1>Кажется, эта ссылка больше не работает</h1><p>${reason}. Попросите партнёра создать новое приглашение.</p></div>`);
 }
 
+function renderInstall() {
+  const androidUrl = env.VITE_ANDROID_APK_URL || env.VITE_PLAY_STORE_URL || '#';
+  shell(`<div class="card center">
+    <span class="large-heart">${icon('heart')}</span>
+    <p class="eyebrow">Тестовая версия</p>
+    <h1>Ваше место только для двоих</h1>
+    <p class="lead">Установите MVP на Android и откройте демонстрационный режим, чтобы познакомиться с приложением.</p>
+    <a class="primary" href="${androidUrl}">${icon('phone')} Скачать Android APK</a>
+  </div>`);
+}
+
 function renderInvite(preview: InvitePreview) {
   const code = preview.code ?? '••••••';
   const expires = preview.expiresAt ? new Intl.DateTimeFormat('ru-RU', { dateStyle: 'long', timeStyle: 'short' }).format(new Date(preview.expiresAt)) : '';
   const deepLink = `${env.VITE_APP_SCHEME || 'myvdvoem'}://invite/${encodeURIComponent(token)}`;
+  const androidUrl = env.VITE_ANDROID_APK_URL || env.VITE_PLAY_STORE_URL || '#';
+  const androidLabel = env.VITE_ANDROID_APK_URL ? 'Скачать Android APK' : 'Google Play';
   shell(`<div class="card">
     <div class="heart-confetti" aria-hidden="true">♡ <b>♥</b> ♡</div>
     <span class="large-heart">${icon('heart')}</span>
@@ -46,7 +59,7 @@ function renderInvite(preview: InvitePreview) {
     <a class="primary" href="${deepLink}">${icon('phone')} Открыть приложение</a>
     <div class="divider"><span>или введите код после установки</span></div>
     <button class="code" data-copy="${code}" aria-label="Скопировать код приглашения"><span>${code}</span><small>Нажмите, чтобы скопировать</small></button>
-    <div class="stores"><a href="${env.VITE_APP_STORE_URL || '#'}">App Store</a><a href="${env.VITE_PLAY_STORE_URL || '#'}">Google Play</a></div>
+    <div class="stores"><a href="${env.VITE_APP_STORE_URL || '#'}">App Store</a><a href="${androidUrl}">${androidLabel}</a></div>
     ${expires ? `<p class="expiry">Действует до ${expires}</p>` : ''}
   </div>`);
   document.querySelector<HTMLButtonElement>('.code')?.addEventListener('click', async (event) => {
@@ -59,6 +72,7 @@ function renderInvite(preview: InvitePreview) {
 
 async function loadInvite() {
   renderLoading();
+  if (!token) return renderInstall();
   if (!token || !env.VITE_SUPABASE_URL || !env.VITE_SUPABASE_PUBLISHABLE_KEY) {
     if (import.meta.env.DEV && token) return renderInvite({ valid: true, code: 'ВДВОЁМ' });
     return renderError('Не удалось определить приглашение');
